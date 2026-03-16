@@ -1,0 +1,4 @@
+format:
+  revealjs:
+    chalkboard: false
+    embed-resources: true

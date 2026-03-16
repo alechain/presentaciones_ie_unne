@@ -1,0 +1,29 @@
+/* Evita overflow y scrollbars en todas las slides */
+.reveal .slides section {
+  overflow: hidden;
+}
+
+/* Tablas: fuente un poco más chica para que entren bien */
+.reveal table {
+  font-size: 0.75em;
+}
+
+/* Código: limitar ancho y permitir scroll si es muy largo */
+.reveal pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Logo: arriba a la derecha, más visible */
+.reveal .slide-logo {
+  position: fixed !important;
+  top: 12px !important;
+  right: 16px !important;
+  bottom: unset !important;
+  max-height: 70px !important;
+}
+
+/* Espacio extra abajo para que el contenido no tape el footer */
+.reveal .slides section {
+  padding-bottom: 2.5em;
+}
