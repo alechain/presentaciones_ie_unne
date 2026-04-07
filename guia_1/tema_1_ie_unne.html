@@ -1619,6 +1619,711 @@ Práctica . Lic. en Economía · UNNE
 <p>Hay casi un <strong>73%</strong> de probabilidad de que el jurado tuviera al menos dos miembros que ya creían en la inocencia antes del juicio.</p>
 </blockquote>
 </div>
+</section></section>
+<section>
+<section id="distribuciones-continuas" class="title-slide slide level1 center" data-background-color="#2c3e50">
+<h1>Distribuciones Continuas</h1>
+
+</section>
+<section id="continuas-vs.-discretas" class="slide level2 smaller">
+<h2>Continuas vs.&nbsp;discretas</h2>
+<p>Las distribuciones que vimos (Bernoulli, Binomial) son <strong>discretas</strong>: sus valores posibles son contables.</p>
+<div class="fragment">
+<p>Las distribuciones <strong>continuas</strong> pueden tomar cualquier valor real en un intervalo.</p>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Discreta</th>
+<th>Continua</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Valores posibles</td>
+<td>Contables: <span class="math inline">\(0, 1, 2, \ldots\)</span></td>
+<td>Cualquier real en <span class="math inline">\((-\infty, +\infty)\)</span></td>
+</tr>
+<tr class="even">
+<td>Probabilidad puntual</td>
+<td><span class="math inline">\(P(X = x) &gt; 0\)</span></td>
+<td><span class="math inline">\(P(X = x) = 0\)</span> siempre</td>
+</tr>
+<tr class="odd">
+<td>Función</td>
+<td>Masa de probabilidad (FMP)</td>
+<td><strong>Densidad</strong> de probabilidad (FDP)</td>
+</tr>
+<tr class="even">
+<td>Probabilidad en intervalo</td>
+<td><span class="math inline">\(\displaystyle\sum_{x=a}^{b} P(X=x)\)</span></td>
+<td><span class="math inline">\(\displaystyle\int_a^b f(x)\,dx\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Para VA continuas, la probabilidad está en los <strong>intervalos</strong>, no en puntos. <span class="math inline">\(P(\text{ingreso} = 50000.00) = 0\)</span> exacto.</p>
+</blockquote>
+</div>
+</section>
+<section id="la-distribución-normal" class="slide level2 smaller">
+<h2>La distribución Normal</h2>
+<p>Notación:</p>
+<p><span class="math display">\[X \sim N(\mu,\, \sigma^2)\]</span></p>
+<p><strong>Función de densidad de probabilidad:</strong></p>
+<p><span class="math display">\[f(x) = \frac{1}{\sigma\sqrt{2\pi}}\, \exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right), \qquad x \in \mathbb{R}\]</span></p>
+<div class="fragment">
+<p><strong>Parámetros:</strong></p>
+<ul>
+<li><span class="math inline">\(\mu\)</span> — media: determina la <strong>posición</strong> del centro de la campana</li>
+<li><span class="math inline">\(\sigma^2\)</span> — varianza: determina la <strong>dispersión</strong> (<span class="math inline">\(\sigma\)</span> = desvío estándar)</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Momentos:</strong></p>
+<p><span class="math display">\[E[X] = \mu \qquad \text{Var}(X) = \sigma^2\]</span></p>
+</div>
+</section>
+<section id="normal-propiedades" class="slide level2 smaller">
+<h2>Normal: propiedades</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Forma y simetría</strong></p>
+<ul>
+<li>Simétrica alrededor de <span class="math inline">\(\mu\)</span> → Media = Mediana = Moda</li>
+<li>Cola infinita en ambos extremos</li>
+</ul>
+<p><strong>Regla 68–95–99.7</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Intervalo</th>
+<th>Probabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mu \pm \sigma\)</span></td>
+<td><span class="math inline">\(\approx 68\%\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mu \pm 2\sigma\)</span></td>
+<td><span class="math inline">\(\approx 95\%\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mu \pm 3\sigma\)</span></td>
+<td><span class="math inline">\(\approx 99.7\%\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:52%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-55-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="normal-el-rol-de-μ-y-σ" class="slide level2 smaller">
+<h2>Normal: el rol de μ y σ</h2>
+
+<img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-56-1.png" width="960" class="r-stretch"><blockquote>
+<p><span class="math inline">\(\mu\)</span> <strong>desplaza</strong> el centro de la campana. <span class="math inline">\(\sigma\)</span> controla cuán <strong>ancha o angosta</strong> es.</p>
+</blockquote>
+</section>
+<section id="la-normal-estándar" class="slide level2 smaller">
+<h2>La Normal Estándar</h2>
+<p>Caso especial con <span class="math inline">\(\mu = 0\)</span> y <span class="math inline">\(\sigma^2 = 1\)</span>:</p>
+<p><span class="math display">\[Z \sim N(0,\, 1)\]</span></p>
+<div class="fragment">
+<p>Cualquier Normal puede <strong>transformarse</strong> a <span class="math inline">\(Z\)</span> mediante la estandarización:</p>
+<p><span class="math display">\[Z = \frac{X - \mu}{\sigma}\]</span></p>
+</div>
+<div class="fragment">
+<p>Esto permite:</p>
+<ul>
+<li>Usar <strong>una sola distribución de referencia</strong> para cualquier Normal</li>
+<li><strong>Comparar</strong> variables medidas en distintas unidades</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[P(X \leq x) = P\!\left(Z \leq \frac{x - \mu}{\sigma}\right) = \Phi\!\left(\frac{x - \mu}{\sigma}\right)\]</span></p>
+<p>donde <span class="math inline">\(\Phi\)</span> es la distribución acumulada de la <span class="math inline">\(N(0,1)\)</span>.</p>
+</div>
+</section>
+<section id="estandarización-en-r-dos-formas-equivalentes" class="slide level2 smaller">
+<h2>Estandarización en R: dos formas equivalentes</h2>
+<p>Sea <span class="math inline">\(X \sim N(\mu = 30,\, \sigma^2 = 30)\)</span>. Queremos <span class="math inline">\(P(X &lt; 25)\)</span>:</p>
+<div class="fragment">
+<p><strong>Forma 1 — directa:</strong> le pasamos los parámetros a <code>pnorm</code></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">30</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">30</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1806552</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Forma 2 — estandarizando a mano:</strong> calculamos <span class="math inline">\(z\)</span> y usamos la <span class="math inline">\(N(0,1)\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href=""></a>z <span class="ot">&lt;-</span> (<span class="dv">25</span> <span class="sc">-</span> <span class="dv">30</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">30</span>)</span>
+<span id="cb76-2"><a href=""></a><span class="fu">pnorm</span>(z)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1806552</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p>En la práctica podemos usar la <strong>Forma 1</strong>. La Forma 2 es lo que se hacía con las tablas Z antes de las computadoras…</p>
+</blockquote>
+</div>
+</section>
+<section id="dnorm-altura-de-la-curva-no-una-probabilidad" class="slide level2 smaller">
+<h2><code>dnorm</code>: altura de la curva, no una probabilidad</h2>
+<p>En distribuciones <strong>discretas</strong>, <code>dbinom</code> sí da una probabilidad puntual:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">3</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">prob =</span> <span class="fl">0.3</span>)   <span class="co"># P(X = 3)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>En distribuciones <strong>continuas</strong>, <code>dnorm</code> da la <strong>altura</strong> de la curva — no es una probabilidad:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href=""></a><span class="fu">dnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">30</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">30</span>))   <span class="co"># f(30) ≠ P(X = 30)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-63-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="por-qué-px-x-0" class="slide level2 smaller">
+<h2>¿Por qué <code>P(X = x) = 0</code>?</h2>
+<p>En una VA continua, la probabilidad es el <strong>área bajo la curva</strong>:</p>
+<p><span class="math display">\[P(a &lt; X &lt; b) = \int_a^b f(x)\, dx\]</span></p>
+<div class="fragment">
+<p>Un punto único tiene <strong>ancho cero</strong> → área cero:</p>
+<p><span class="math display">\[P(X = x_0) = \int_{x_0}^{x_0} f(x)\, dx = 0\]</span></p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-64-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Consecuencia práctica:</strong> en distribuciones continuas, <span class="math inline">\(P(X &lt; 25) = P(X \leq 25)\)</span> — el extremo puntual no suma nada.</p>
+</blockquote>
+</div>
+</section>
+<section id="pnorm-probabilidades-como-áreas" class="slide level2 smaller">
+<h2><code>pnorm</code>: probabilidades como áreas</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href=""></a>mu_x <span class="ot">&lt;-</span> <span class="dv">30</span>; sigma_x <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">30</span>)</span>
+<span id="cb80-2"><a href=""></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, mu_x, sigma_x),</span>
+<span id="cb80-3"><a href=""></a>      <span class="at">from =</span> mu_x <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>sigma_x, <span class="at">to =</span> mu_x <span class="sc">+</span> <span class="dv">4</span><span class="sc">*</span>sigma_x,</span>
+<span id="cb80-4"><a href=""></a>      <span class="at">col =</span> <span class="st">"steelblue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb80-5"><a href=""></a>      <span class="at">ylab =</span> <span class="st">"f(x)"</span>, <span class="at">main =</span> <span class="st">"N(30, 30):  pnorm(25, ...) = P(X &lt; 25)"</span>)</span>
+<span id="cb80-6"><a href=""></a>x_area <span class="ot">&lt;-</span> <span class="fu">seq</span>(mu_x <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>sigma_x, <span class="dv">25</span>, <span class="at">length =</span> <span class="dv">300</span>)</span>
+<span id="cb80-7"><a href=""></a><span class="fu">polygon</span>(<span class="fu">c</span>(x_area, <span class="dv">25</span>, mu_x <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>sigma_x),</span>
+<span id="cb80-8"><a href=""></a>        <span class="fu">c</span>(<span class="fu">dnorm</span>(x_area, mu_x, sigma_x), <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb80-9"><a href=""></a>        <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.75</span>, <span class="fl">0.22</span>, <span class="fl">0.17</span>, <span class="fl">0.45</span>), <span class="at">border =</span> <span class="cn">NA</span>)</span>
+<span id="cb80-10"><a href=""></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">25</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#c0392b"</span>)</span>
+<span id="cb80-11"><a href=""></a><span class="fu">text</span>(<span class="dv">20</span>, <span class="fl">0.038</span>,</span>
+<span id="cb80-12"><a href=""></a>     <span class="fu">paste0</span>(<span class="st">"P(X &lt; 25)</span><span class="sc">\n</span><span class="st">= "</span>, <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="dv">25</span>, mu_x, sigma_x), <span class="dv">3</span>)),</span>
+<span id="cb80-13"><a href=""></a>     <span class="at">cex =</span> <span class="fl">0.9</span>, <span class="at">col =</span> <span class="st">"#c0392b"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-65-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="distribuciones-muestrales" class="title-slide slide level1 center" data-background-color="#2c3e50">
+<h1>Distribuciones Muestrales</h1>
+
+</section>
+<section id="el-árbol-genealógico-de-la-inferencia" class="slide level2 smaller">
+<h2>El árbol genealógico de la inferencia</h2>
+
+<img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-66-1.png" width="960" class="r-stretch"></section>
+<section id="distribución-chi-cuadrado" class="slide level2 smaller">
+<h2>Distribución Chi-cuadrado</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<p><strong>Origen:</strong> suma de <span class="math inline">\(\nu\)</span> normales estándar independientes <strong>al cuadrado</strong></p>
+<p><span class="math display">\[\chi^2_\nu = \sum_{i=1}^{\nu} Z_i^2 \qquad Z_i \sim N(0,1)\]</span></p>
+<p>. . .</p>
+<p><strong>Parámetro:</strong> <span class="math inline">\(\nu\)</span> — grados de libertad</p>
+<p><strong>Momentos:</strong></p>
+<p><span class="math display">\[E[X] = \nu \qquad \text{Var}(X) = 2\nu\]</span></p>
+<p>. . .</p>
+<p><strong>Propiedades:</strong></p>
+<ul>
+<li>Solo toma valores <span class="math inline">\(&gt; 0\)</span></li>
+<li>Asimétrica a la derecha</li>
+<li>A medida que <span class="math inline">\(\nu\)</span> crece, se aproxima a la Normal</li>
+</ul>
+<p>. . .</p>
+<p><strong>Aplicación:</strong> la varianza muestral <span class="math inline">\(S^2\)</span> se distribuye como una <span class="math inline">\(\chi^2\)</span> escalada. Como <span class="math inline">\(S^2\)</span> suma cuadrados de desviaciones, <strong>no puede ser negativa</strong>.</p>
+</div><div class="column" style="width:54%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-67-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="distribución-t-de-student" class="slide level2 smaller">
+<h2>Distribución t de Student</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<p><strong>Origen:</strong> cociente entre una <span class="math inline">\(Z\)</span> y la raíz de una <span class="math inline">\(\chi^2\)</span> (dividida por sus grados de libertad)</p>
+<p><span class="math display">\[t_\nu = \frac{Z}{\sqrt{\chi^2_\nu / \nu}}\]</span></p>
+<p>. . .</p>
+<p><strong>Parámetro:</strong> <span class="math inline">\(\nu\)</span> — grados de libertad</p>
+<p><strong>Propiedades:</strong></p>
+<ul>
+<li>Simétrica, centrada en 0</li>
+<li><strong>Colas más pesadas</strong> que la <span class="math inline">\(N(0,1)\)</span></li>
+<li>A medida que <span class="math inline">\(\nu \to \infty\)</span>, <span class="math inline">\(t_\nu \to N(0,1)\)</span></li>
+</ul>
+<p>. . .</p>
+<p><strong>¿Por qué existe?</strong> En la práctica, <span class="math inline">\(\sigma\)</span> nunca se conoce — se estima con <span class="math inline">\(S\)</span>. Al reemplazar <span class="math inline">\(\sigma\)</span> por <span class="math inline">\(S\)</span> se introduce incertidumbre extra → colas más anchas.</p>
+<p><strong>Aplicación:</strong> inferencia sobre medias y diferencias de medias cuando <span class="math inline">\(\sigma\)</span> es desconocido.</p>
+</div><div class="column" style="width:54%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-68-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="distribución-f-de-fisher" class="slide level2 smaller">
+<h2>Distribución F de Fisher</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<p><strong>Origen:</strong> cociente de dos <span class="math inline">\(\chi^2\)</span> independientes, cada una dividida por sus grados de libertad</p>
+<p><span class="math display">\[F_{k_1, k_2} = \frac{\chi^2_{k_1} / k_1}{\chi^2_{k_2} / k_2}\]</span></p>
+<p>. . .</p>
+<p><strong>Parámetros:</strong> <span class="math inline">\(k_1\)</span> (numerador) y <span class="math inline">\(k_2\)</span> (denominador) — grados de libertad</p>
+<p><strong>Propiedades:</strong></p>
+<ul>
+<li>Solo toma valores <span class="math inline">\(&gt; 0\)</span></li>
+<li>Asimétrica a la derecha</li>
+<li>Si <span class="math inline">\(F \sim F_{k_1, k_2}\)</span>, entonces <span class="math inline">\(1/F \sim F_{k_2, k_1}\)</span></li>
+</ul>
+<p>. . .</p>
+<p><strong>Aplicación:</strong> comparar dos varianzas muestrales; probar la <strong>significatividad global</strong> de un modelo de regresión (test F en econometría).</p>
+</div><div class="column" style="width:54%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-69-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="ejercicios-distribución-normal" class="title-slide slide level1 center" data-background-color="#2c3e50">
+<h1>Ejercicios: Distribución Normal</h1>
+
+</section>
+<section id="ej.-1.3-simulación-con-la-normal" class="slide level2 smaller">
+<h2>Ej. 1.3 — Simulación con la Normal</h2>
+<p><span class="math display">\[X \sim N(\mu = 30,\; \sigma^2 = 30) \qquad \sigma = \sqrt{30} \approx 5.48\]</span></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parte</th>
+<th>Qué pide</th>
+<th>Concepto clave</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a)</td>
+<td>100.000 realizaciones → <code>Pob.x</code></td>
+<td>Población simulada</td>
+</tr>
+<tr class="even">
+<td>b)</td>
+<td><span class="math inline">\(P(X &lt; 25)\)</span> y <span class="math inline">\(P(35 &lt; X &lt; 45)\)</span></td>
+<td>Probabilidad empírica</td>
+</tr>
+<tr class="odd">
+<td>c)</td>
+<td>1.000 muestras de <span class="math inline">\(n = 10\)</span> → medias</td>
+<td>Distribución muestral</td>
+</tr>
+<tr class="even">
+<td>d)</td>
+<td><span class="math inline">\(P(\bar{X} &lt; 25)\)</span> y <span class="math inline">\(P(35 &lt; \bar{X} &lt; 45)\)</span></td>
+<td>Prob. sobre medias</td>
+</tr>
+<tr class="odd">
+<td>e)</td>
+<td>Repetir c) con <span class="math inline">\(n = 100\)</span> y <span class="math inline">\(n = 1000\)</span></td>
+<td><strong>Ley de los Grandes Números</strong></td>
+</tr>
+<tr class="even">
+<td>f)</td>
+<td>Estandarizar las medias muestrales</td>
+<td><strong>Teorema Central del Límite</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ej.-1.3-a-generar-la-población" class="slide level2 smaller">
+<h2>Ej. 1.3 — a) Generar la población</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href=""></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb81-2"><a href=""></a>n <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb81-3"><a href=""></a>Pob.x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">30</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">30</span>))</span>
+<span id="cb81-4"><a href=""></a><span class="fu">hist</span>(Pob.x)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-72-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ej.-1.3-b-probabilidad-empírica" class="slide level2 smaller">
+<h2>Ej. 1.3 — b) Probabilidad empírica</h2>
+<p>No usamos <code>pnorm</code> directamente — calculamos proporciones sobre la población simulada:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href=""></a><span class="co"># P(X &lt; 25)</span></span>
+<span id="cb82-2"><a href=""></a>sub_25 <span class="ot">&lt;-</span> Pob.x <span class="sc">&lt;</span> <span class="dv">25</span></span>
+<span id="cb82-3"><a href=""></a>sub_25[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]        <span class="co"># TRUE/FALSE por observación</span></span>
+<span id="cb82-4"><a href=""></a><span class="fu">sum</span>(sub_25)         <span class="co"># cuántas observaciones &lt; 25</span></span>
+<span id="cb82-5"><a href=""></a><span class="fu">mean</span>(sub_25)        <span class="co"># proporción = probabilidad empírica</span></span>
+<span id="cb82-6"><a href=""></a></span>
+<span id="cb82-7"><a href=""></a><span class="co"># P(35 &lt; X &lt; 45)</span></span>
+<span id="cb82-8"><a href=""></a>ent_35<span class="fl">.45</span> <span class="ot">&lt;-</span> Pob.x <span class="sc">&gt;</span> <span class="dv">35</span> <span class="sc">&amp;</span> Pob.x <span class="sc">&lt;</span> <span class="dv">45</span></span>
+<span id="cb82-9"><a href=""></a><span class="fu">sum</span>(ent_35<span class="fl">.45</span>); <span class="fu">mean</span>(ent_35<span class="fl">.45</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &lt; 25)      — sum: 18111  mean: 0.1811 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(35 &lt; X &lt; 45) — sum: 17631  mean: 0.1763 </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="ej.-1.3-b-comparación-con-pnorm" class="slide level2 smaller">
+<h2>Ej. 1.3 — b) Comparación con <code>pnorm</code></h2>
+<p><code>mean()</code> sobre un vector booleano es la frecuencia relativa de la condición — aproxima la probabilidad teórica.</p>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                   Empírico    Teórico (pnorm)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &lt; 25):         0.1811        0.1807 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(35 &lt; X &lt; 45):    0.1763        0.1776 </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p><code>pnorm</code> calcula exactamente esa misma área — pero con la integral en lugar de contar observaciones. Con 100.000 valores, la aproximación empírica es muy precisa.</p>
+</blockquote>
+</div>
+</section>
+<section id="ej.-1.3-c-distribución-muestral-n-10" class="slide level2 smaller">
+<h2>Ej. 1.3 — c) Distribución muestral (n = 10)</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href=""></a>x.media.n10 <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb88-2"><a href=""></a></span>
+<span id="cb88-3"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>) {</span>
+<span id="cb88-4"><a href=""></a>  x.media.n10[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(Pob.x, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb88-5"><a href=""></a>}</span>
+<span id="cb88-6"><a href=""></a></span>
+<span id="cb88-7"><a href=""></a><span class="fu">hist</span>(x.media.n10)</span>
+<span id="cb88-8"><a href=""></a><span class="fu">mean</span>(x.media.n10)</span>
+<span id="cb88-9"><a href=""></a><span class="fu">var</span>(x.media.n10)</span>
+<span id="cb88-10"><a href=""></a><span class="fu">sd</span>(x.media.n10)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>mean: 30.0745 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>var:  3.0527   (teórico: σ²/n = 3 )</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>sd:   1.7472 </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-78-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ej.-1.3-d-probabilidad-de-barx" class="slide level2 smaller">
+<h2>Ej. 1.3 — d) Probabilidad de <span class="math inline">\(\bar{X}\)</span></h2>
+<p>Mismo procedimiento que b), ahora sobre el vector de medias muestrales:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a><span class="co"># P(media(x) &lt; 25)</span></span>
+<span id="cb92-2"><a href=""></a>m.sub_25 <span class="ot">&lt;-</span> x.media.n10 <span class="sc">&lt;</span> <span class="dv">25</span></span>
+<span id="cb92-3"><a href=""></a><span class="fu">sum</span>(m.sub_25); <span class="fu">mean</span>(m.sub_25)</span>
+<span id="cb92-4"><a href=""></a></span>
+<span id="cb92-5"><a href=""></a><span class="co"># P(35 &lt; media(x) &lt; 45)</span></span>
+<span id="cb92-6"><a href=""></a>m.ent_35<span class="fl">.45</span> <span class="ot">&lt;-</span> x.media.n10 <span class="sc">&gt;</span> <span class="dv">35</span> <span class="sc">&amp;</span> x.media.n10 <span class="sc">&lt;</span> <span class="dv">45</span></span>
+<span id="cb92-7"><a href=""></a><span class="fu">sum</span>(m.ent_35<span class="fl">.45</span>); <span class="fu">mean</span>(m.ent_35<span class="fl">.45</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>P(x̄ &lt; 25)        — sum: 3  mean: 0.003 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(35 &lt; x̄ &lt; 45)  — sum: 0  mean: 0 </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Comparar con b): una observación individual tiene varianza <span class="math inline">\(\sigma^2 = 30\)</span>; la media de <span class="math inline">\(n=10\)</span> tiene varianza <span class="math inline">\(\sigma^2/n = 3\)</span>. Valores extremos como <span class="math inline">\(\bar{X} &lt; 25\)</span> son mucho menos probables para la media que para una sola observación.</p>
+</blockquote>
+</div>
+</section>
+<section id="ej.-1.3-e-ley-de-los-grandes-números" class="slide level2 smaller">
+<h2>Ej. 1.3 — e) Ley de los Grandes Números</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href=""></a>x.media.n100  <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb95-2"><a href=""></a>x.media.n1000 <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb95-3"><a href=""></a></span>
+<span id="cb95-4"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>) {</span>
+<span id="cb95-5"><a href=""></a>  x.media.n100[i]  <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(Pob.x, <span class="at">size =</span> <span class="dv">100</span>,  <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb95-6"><a href=""></a>  x.media.n1000[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(Pob.x, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb95-7"><a href=""></a>}</span>
+<span id="cb95-8"><a href=""></a></span>
+<span id="cb95-9"><a href=""></a><span class="fu">mean</span>(x.media.n100);  <span class="fu">mean</span>(x.media.n1000)</span>
+<span id="cb95-10"><a href=""></a><span class="fu">var</span>(x.media.n100);   <span class="fu">var</span>(x.media.n1000)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>        mean        var      var teórica (σ²/n)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>n=10:   30.0745    3.0527        3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>n=100:  30.0071    0.2902        0.3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>n=1000: 30.0057    0.03       0.03 </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Ley de los Grandes Números:</strong> a medida que <span class="math inline">\(n\)</span> crece, <span class="math inline">\(\text{Var}(\bar{X}) = \sigma^2/n \to 0\)</span> y <span class="math inline">\(\bar{X} \to \mu\)</span>. El estimador <strong>converge</strong> al verdadero parámetro — esto es la <strong>consistencia</strong>.</p>
+</blockquote>
+</div>
+</section>
+<section id="ej.-1.3-e-lgn-visualización" class="slide level2 smaller">
+<h2>Ej. 1.3 — e) LGN: visualización</h2>
+
+<img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-83-1.png" width="960" class="r-stretch"><blockquote>
+<p>La distribución se <strong>concentra</strong> cada vez más alrededor de <span class="math inline">\(\mu = 30\)</span>. La varianza teórica es <span class="math inline">\(\sigma^2/n = 30/n\)</span>.</p>
+</blockquote>
+</section>
+<section id="ej.-1.3-f-teorema-central-del-límite" class="slide level2 smaller">
+<h2>Ej. 1.3 — f) Teorema Central del Límite</h2>
+<p>Estandarizamos: <span class="math inline">\(\displaystyle Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}}\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href=""></a>est_x.med.n10   <span class="ot">&lt;-</span> (x.media.n10   <span class="sc">-</span> <span class="dv">30</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">30</span><span class="sc">/</span><span class="dv">10</span>)</span>
+<span id="cb100-2"><a href=""></a>est_x.med.n100  <span class="ot">&lt;-</span> (x.media.n100  <span class="sc">-</span> <span class="dv">30</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">30</span><span class="sc">/</span><span class="dv">100</span>)</span>
+<span id="cb100-3"><a href=""></a>est_x.med.n1000 <span class="ot">&lt;-</span> (x.media.n1000 <span class="sc">-</span> <span class="dv">30</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">30</span><span class="sc">/</span><span class="dv">1000</span>)</span>
+<span id="cb100-4"><a href=""></a></span>
+<span id="cb100-5"><a href=""></a><span class="fu">mean</span>(est_x.med.n10);  <span class="fu">mean</span>(est_x.med.n100);  <span class="fu">mean</span>(est_x.med.n1000)</span>
+<span id="cb100-6"><a href=""></a><span class="fu">var</span>(est_x.med.n10);   <span class="fu">var</span>(est_x.med.n100);   <span class="fu">var</span>(est_x.med.n1000)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>        mean         var</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>n=10:   0.043     1.0176 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>n=100:  0.0129     0.9674 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>n=1000: 0.0327     0.999 </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Independientemente de <span class="math inline">\(n\)</span>: <strong>media <span class="math inline">\(\approx 0\)</span></strong> y <strong>varianza <span class="math inline">\(\approx 1\)</span></strong>.</p>
+</blockquote>
+</div>
+</section>
+<section id="ej.-1.3-f-tcl-convergencia-a-n01" class="slide level2 smaller">
+<h2>Ej. 1.3 — f) TCL: convergencia a N(0,1)</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href=""></a>grid.NormEst <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="at">by =</span> <span class="fl">0.01</span>)</span>
+<span id="cb105-2"><a href=""></a></span>
+<span id="cb105-3"><a href=""></a><span class="fu">hist</span>(est_x.med.n10,   <span class="at">freq =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb105-4"><a href=""></a><span class="fu">hist</span>(est_x.med.n100,  <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="dv">2</span>, <span class="at">freq =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb105-5"><a href=""></a><span class="fu">hist</span>(est_x.med.n1000, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="dv">3</span>, <span class="at">freq =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb105-6"><a href=""></a><span class="fu">points</span>(grid.NormEst, <span class="fu">dnorm</span>(grid.NormEst))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-87-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ej.-1.3-f-tcl-conclusión" class="slide level2 smaller">
+<h2>Ej. 1.3 — f) TCL: conclusión</h2>
+<blockquote>
+<p><strong>TCL:</strong> al estandarizar, las tres distribuciones convergen a la <strong>misma</strong> <span class="math inline">\(N(0,1)\)</span>, independientemente de <span class="math inline">\(n\)</span>.</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Diferencia clave entre e) y f):</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>e) LGN</th>
+<th>f) TCL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Variable</td>
+<td><span class="math inline">\(\bar{X}\)</span> sin transformar</td>
+<td><span class="math inline">\(Z = (\bar{X} - \mu)/(\sigma/\sqrt{n})\)</span></td>
+</tr>
+<tr class="even">
+<td>Escala</td>
+<td>Cambia con <span class="math inline">\(n\)</span> (se concentra en torno a <span class="math inline">\(\mu\)</span>)</td>
+<td>Siempre la misma: <span class="math inline">\(N(0,1)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Qué muestra</td>
+<td>Convergencia al verdadero parámetro</td>
+<td>Forma universal de la distribución</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="tcl-vale-para-cualquier-distribución" class="slide level2 smaller">
+<h2>TCL: vale para cualquier distribución</h2>
+<p>El TCL no requiere que la población sea Normal. Sea <span class="math inline">\(X \sim \chi^2(3)\)</span> — distribución <strong>asimétrica</strong>:</p>
+<p><span class="math display">\[E[X] = 3 \qquad \text{Var}(X) = 6\]</span></p>
+
+<img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-88-1.png" width="960" class="r-stretch"><blockquote>
+<p>La población de origen es claramente <strong>no normal</strong>. ¿Las medias muestrales se distribuirán como una Normal?</p>
+</blockquote>
+</section>
+<section id="tcl-convergencia-desde-una-χ²3" class="slide level2 smaller">
+<h2>TCL: convergencia desde una χ²(3)</h2>
+
+<img data-src="tema_1_ie_unne_files/figure-revealjs/unnamed-chunk-89-1.png" width="960" class="r-stretch"><div class="fragment">
+<blockquote>
+<p>La población de origen era <span class="math inline">\(\chi^2(3)\)</span> — completamente asimétrica. Con <span class="math inline">\(n = 100\)</span>, las medias estandarizadas ya son prácticamente <span class="math inline">\(N(0,1)\)</span>. <strong>El TCL no pide normalidad: solo que <span class="math inline">\(n\)</span> sea suficientemente grande.</strong></p>
+</blockquote>
+</div>
+</section></section>
+<section>
+<section id="casos-para-resolver" class="title-slide slide level1 center" data-background-color="#2c3e50">
+<h1>Casos para resolver</h1>
+
+</section>
+<section id="caso-bodega-suscripción-de-vinos-premium" class="slide level2 smaller">
+<h2>Caso Bodega: suscripción de vinos premium</h2>
+<p>Una bodega boutique en Mendoza quiere ofrecer una suscripción de vinos Premium.</p>
+<p>La tasa de conversión histórica cuando se llama a la base de clientes es del <strong>15%</strong>. Hoy tienen operadores listos para contactar una lista exclusiva de <strong>50 clientes VIP</strong>.</p>
+<p>La logística de envíos y las comisiones del call center solo se justifican si se cierran <strong>10 o más suscripciones</strong>. Si no se llega a 10, se pierde plata.</p>
+<p>También existe la opción de <strong>ampliar la lista a 200 clientes</strong>, pero esto bajaría la tasa de respuesta al <strong>10%</strong>, y con ese número se necesitan al menos <strong>15 suscripciones</strong> para que sea rentable.</p>
+</section>
+<section id="caso-arándanos" class="slide level2 smaller">
+<h2>Caso Arándanos</h2>
+<p>Estamos exportando cajas de arándanos premium a Alemania, alrededor de 10.000 kg.</p>
+<p>El contrato europeo es durísimo. Cada caja que vendemos dice “1000 gramos”. Si la inspección en la aduana europea agarra una caja al azar y pesa menos de 980 gramos, nos rechazan el pallet entero y perdemos miles de dólares.</p>
+<p>Por otro lado, el arándano es nuestro insumo más caro. Si sobrellenamos las cajas por miedo a la multa, estamos regalando mercadería. Cada gramo extra promedio nos cuesta una fortuna a fin de mes.</p>
+<p>Actualmente la máquina empacadora le erra por más o menos 12 gramos. Nuestro gerente de producción configuró la máquina para que el peso promedio de llenado sea de 1015 gramos, para “estar seguros”.</p>
+<p>Yo no quiero estar seguro a ciegas, quiero optimizar. Estoy dispuesto a tolerar que solo el <strong>1%</strong> de las cajas pese menos de 980 gramos. Ni más, ni menos.</p>
+<p>¿Me pueden ayudar?</p>
 </section>
 <section id="section" class="slide level2" data-background-color="#2c3e50">
 <h2></h2>
